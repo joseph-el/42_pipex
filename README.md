@@ -34,3 +34,6 @@
 ![wp2089278-pipes-wallpapers](https://user-images.githubusercontent.com/80905157/211057797-292ffa74-d3cf-4590-a8d8-3784dff7582c.jpg)
 
 </h3>
+
+## About project
+- This project is about pipe in unix processes 
