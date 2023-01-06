@@ -5,10 +5,10 @@
 <p align="center">
 	<b><i>  Understanding pipes </i></b><br>
 <p align="center">
-	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/joseph-el/The-Philosophers-Problem?color=lightblue" />
-	<img alt="Code language count" src="https://img.shields.io/github/languages/count/joseph-el/The-Philosophers-Problem?color=yellow" />
-	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/joseph-el/The-Philosophers-Problem?color=blue" />
-	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/joseph-el/The-Philosophers-Problem?color=green" />
+	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/joseph-el/42_pipex?color=lightblue" />
+	<img alt="Code language count" src="https://img.shields.io/github/languages/count/joseph-el/42_pipex?color=yellow" />
+	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/joseph-el/42_pipex?color=blue" />
+	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/joseph-el/42_pipex?color=green" />
 
 </p>
   <p align="center">
@@ -22,15 +22,15 @@
       <img src="https://codecov.io/gh/anuraghazra/github-readme-stats/branch/master/graph/badge.svg" />
     </a>
     <a href="https://github.com/anuraghazra/github-readme-stats/issues">
-      <img alt="Issues" src="https://img.shields.io/github/issues/joseph-el/The-Philosophers-Problem?color=0088ff" />
+      <img alt="Issues" src="https://img.shields.io/github/issues/joseph-el/42_pipex?color=0088ff" />
     </a>
     <a href="https://github.com/anuraghazra/github-readme-stats/pulls">
-      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/joseph-el/The-Philosophers-Problem?color=0088ff" />
+      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/joseph-el/42_pipex?color=0088ff" />
     </a>
   </p>
  
 <h3 align="center">
 
-![wallpaperflare com_wallpaper (1)](https://user-images.githubusercontent.com/80905157/210857437-2748aaaa-3623-4b99-b00d-57154fcf4206.jpg)
- 
+![wp2089278-pipes-wallpapers](https://user-images.githubusercontent.com/80905157/211057797-292ffa74-d3cf-4590-a8d8-3784dff7582c.jpg)
+
 </h3>
