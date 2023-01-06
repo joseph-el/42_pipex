@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 10:12:15 by yoel-idr          #+#    #+#             */
-/*   Updated: 2022/12/19 09:47:08 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/01/06 12:28:58 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	read_herdoc(t_pipe **pip, char *av)
 		if ((!ft_strncmp(line, av, ft_strlen(av))
 				&& ft_strlen(line) == len + 1) || !line)
 			break ;
-		ft_putstr_fd(line, (*pip)->fd[1]);
+		ft_putstr_fd(line, (**pip).fd[1]);
 		free(line);
 	}
 	free(line);

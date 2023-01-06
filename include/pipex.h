@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 06:28:17 by yoel-idr          #+#    #+#             */
-/*   Updated: 2022/12/19 10:06:15 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/01/06 12:28:29 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int					process(t_pipe **pip, char **p_cmd, char **env, int mode);
 bool				dupfiles(t_pipe **pip, char **env, char **p_cmd, int mode);
 int					ft_close(int fd1, int fd2);
 int					ft_free(char *str1, char *str2);
+
 // lib tools function
 
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);

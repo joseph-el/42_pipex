@@ -6,7 +6,7 @@
 #    By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 00:47:48 by yoel-idr          #+#    #+#              #
-#    Updated: 2022/12/19 09:11:33 by yoel-idr         ###   ########.fr        #
+#    Updated: 2023/01/06 12:19:44 by yoel-idr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,13 @@ RM   		:= rm -drf
 OBJ			:= $(SRC:.c=.o)
 OBJ_BNS		:= $(SRC_BNS:.c=.o)
 
-GREEN  	:= \033[1;32m
-RESET  	:= \033[0m
+GREEN     	:= \033[0;32m
+RESET  	    := \033[0m
+RED         := \033[0;31m
+
 
 all 		: 	$(NAME)
-				@echo "$(GREEN)\n <U CAN USE PIPEX> $(RESET)"
+				@echo "$(GREEN)\n <pipex Created Successfully> $(RESET)"
 
 $(NAME) 	: 	$(LIB)
 				@$(CC) $(FLAGS) ./lib/pipex.a ./lib/tools.a -o $(NAME)
@@ -39,7 +41,7 @@ $(LIB) 	: 	$(OBJ)
 				@mv $(LIB) ./lib
 
 bonus 		:	$(LIB_BNS)
-				@echo "$(GREEN)\n <U CAN USE PIPEX_BONUS> $(RESET)"
+				@echo "$(GREEN)\n <pipex Created Successfully> $(RESET)"
 
 $(LIB_BNS) 	: 	$(OBJ_BNS)
 				@$(MAKE) -C tools
@@ -51,21 +53,20 @@ $(LIB_BNS) 	: 	$(OBJ_BNS)
 		@$(CC) $(FLAGS) -c $< -o $@
 	
 clean 		: 
-				@echo "$(GREEN)\n <REMOVING OBJS> $(RESET)"
+				@echo "$(RED)\n <Removing objects> $(RESET)"
 				@make -C tools clean
 				@$(MAKE) -C tools fclean
 				@$(RM) $(LIB) $(LIB_BNS) $(OBJ_BNS) $(OBJ)
 
 fclean  	: 	clean
-				@echo "$(GREEN)\n <CLEANING AND REMOVING libtools LIBRARYS / EXECUTABLE FILE> $(RESET)"
+				@echo "$(RED)\n <Cleaning And Removing libtools Library / Executable File> $(RESET)"
 				@make -C tools fclean
 				@$(RM) $(NAME)
 
 re 	    	: 	fclean all
-				@echo "$(GREEN)\n < ALL CLEAN SUCCESSFULLY> $(RESET)"
+				@echo "$(GREEN)\n < Remake Successfully> $(RESET)"
 
 .PHONY : all bonus clean fclean
-
 
 
 

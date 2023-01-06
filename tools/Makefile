@@ -6,7 +6,7 @@
 #    By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/02 15:10:48 by yoel-idr          #+#    #+#              #
-#    Updated: 2022/12/18 13:57:16 by yoel-idr         ###   ########.fr        #
+#    Updated: 2023/01/06 12:21:56 by yoel-idr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,21 +22,24 @@ AR   := ar -rc
 RM   := rm -drf
 CC   := cc
 
-RED    := \033[1;31m
-GREEN  := \033[1;32m
-YELLOW := \033[1;33m
-BLUE   := \033[1;34m
+RED    := \033[0;31m
+GREEN  := \033[0;32m
+YELLOW := \033[0;33m
+BLUE   := \033[0;34m
 RESET  := \033[0m
 
 all     : $(NAME)
-			@echo "$(RED)\n <TOOLS LIBRARY CREATED SUCCESSFULLY> $(RESET)"
+			@echo "\033[0;32m\n\n\n<Tools Library Created Successfully>$(RESET)"
+			@echo "\nFor the students 42 who want to apply ur tests,\n"
+			@echo "I want to tell u this version of the project does not handle\n"
+			@echo "all tests like the version in my profile at intra 😃\n"
 			@mv $(NAME) ../lib
 
 $(NAME) : $(OBJS)
 			@$(SET) && ar -rc $(NAME) $^
 
 .c.o	:
-			@echo " COMPILING SOURCE FILES :  $(YELLOW) $< ... $(RESET)"
+			@printf "\033[0;33mGenerating tools.a objects... %-100.100000s\r" $@
 			@$(CC) $(FLAG) -c $< -o $@	
 clean	:
 			@$(RM) $(OBJS)

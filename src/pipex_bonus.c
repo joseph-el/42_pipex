@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 16:45:53 by yoel-idr          #+#    #+#             */
-/*   Updated: 2022/12/19 10:04:33 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/01/06 12:25:34 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	pipex(t_pipe **pip, int ac, char **env)
 	{
 		(**pip).cmd = ft_strjoin("/", (*pip)->lst->args[0]);
 		pipe((**pip).fd);
-		if (index == 2)
+		if (!(index ^ 2))
 			process(pip, &p_cmd, env, FORK | INPUT);
 		else if (index == (ac - 2))
 			return (process(pip, &p_cmd, env, FORK | OUTPUT), EXIT_SUCCESS);
@@ -71,7 +71,7 @@ int	main(int ac, char **av, char **env)
 		return (EXIT_FAILURE);
 	(*pip).lst = NULL;
 	(*pip).cmd = NULL;
-	if (!ft_strncmp("here_doc", av[1], 9) && ac == 6)
+	if (!ft_strncmp("here_doc", av[1], 9) && !(ac ^ 6))
 		return (herdoc(&pip, ac, av, env), free(pip), EXIT_SUCCESS);
 	else
 		return (pipes(&pip, ac, av, env), free(pip), EXIT_SUCCESS);
