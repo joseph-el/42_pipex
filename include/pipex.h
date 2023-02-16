@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:40:38 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/02/16 17:09:10 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/02/16 22:48:40 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@
 
 
 typedef unsigned short t_pipe_flag;
+
 typedef struct s_data
 {
     int     io_dest;

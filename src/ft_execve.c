@@ -6,7 +6,7 @@
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 15:56:20 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/02/16 16:05:54 by yoel-idr         ###   ########.fr       */
+/*   Updated: 2023/02/16 23:11:47 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*get_path(char *cmdline, char **envp)
 
 	if (ft_strchr(cmdline, '/'))
 		return (cmdline);
-	while (envp && ft_strcmp(*envp, "PATH", sizeof("PATH") + 1))
+	while (envp && ft_strncmp(*envp, "PATH", sizeof("PATH") + 1))
         *envp ++;
 	if (!*envp)
 		return (NULL);
