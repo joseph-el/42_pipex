@@ -5,81 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yoel-idr <yoel-idr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 06:28:17 by yoel-idr          #+#    #+#             */
-/*   Updated: 2023/01/06 12:28:29 by yoel-idr         ###   ########.fr       */
+/*   Created: 2023/02/16 15:40:38 by yoel-idr          #+#    #+#             */
+/*   Updated: 2023/02/16 17:09:10 by yoel-idr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
+# include <dirent.h>
+# include <errno.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <paths.h>
+# include <signal.h>
 # include <stdbool.h>
-# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
+# include <sys/types.h>
 # include <sys/wait.h>
+# include <termios.h>
 # include <unistd.h>
+# include "gc_memory.h"
 
-# define OUTPUT 2
-# define INPUT 8
-# define FORK 4
-# define PROCESS 1
+# define MIDDLE     1 << 1
+# define FIRST      1 << 3
+# define LAST       1 << 2
+# define INFILE     1 << 5
+# define OUTFILE    1 << 4
+# define FILE_PERM  0664
+# define HERDOC     0x6
+# define PIPE_LINE  0x4
+# define WIRITE_END 1
+# define READ_END   0
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
 
-typedef struct s_list
-{
-	char			**args;
-	struct s_list	*prev;
-	struct s_list	*next;
-}					t_list;
-
+typedef unsigned short t_pipe_flag;
 typedef struct s_data
 {
-	int				fd1;
-	int				fd2;
-	int				fd[2];
-	int				t_fd;
-	int				pid1;
-	char			*cmd;
-	t_list			*lst;
-}					t_pipe;
+    int     io_dest;
+    int     io_src;
+    char    **cmdexc;
+}               t_data;
 
-// pipex function && utils
-int					herdoc(t_pipe **pip, int ac, char **av, char **env);
-bool				get_path(char **env, char *cmd, char **p_cmd);
-int					process(t_pipe **pip, char **p_cmd, char **env, int mode);
-bool				dupfiles(t_pipe **pip, char **env, char **p_cmd, int mode);
-int					ft_close(int fd1, int fd2);
-int					ft_free(char *str1, char *str2);
+typedef struct s_pipeline
+{
+    t_gc    *gc;
+    t_data  *data;
+    char    **envp;
+}               t_pipeline;
 
-// lib tools function
 
-size_t				ft_strlcpy(char *dest, const char *src, size_t size);
-size_t				ft_strlen(const char *str);
-t_list				*ft_lstnew(char *cmd);
-t_list				*ft_lstlast(t_list *lst);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
-int					ft_lstsize(t_list *lst);
-int					ft_isdigit(int c);
-char				*ft_strchr(const char *str, int c);
-char				**ft_split(char const *s, char c, int start);
-char				*reading_fd(int fd, char *stash);
-char				*ft_ft(char *str);
-char				*ft_strjoin(char *stash, char *buffer);
-char				*ft_strjoin_s(char *stash, char *buffer);
-char				*ft_subline(char *stash);
-char				*cleaning_stash(char *stash);
-char				*get_next_line(int fd);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putstr(char *str);
-void				clear_arr(char **arr);
-void				ft_lstclear(t_list **lst);
-void				ft_lstadd_back(t_list **lst, t_list *newC);
-long long			ft_atoi(const char *str);
 
-#endif
+# endif
